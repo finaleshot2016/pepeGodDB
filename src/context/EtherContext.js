@@ -167,13 +167,12 @@ export const EtherContextProvider = ({ children }) => {
 
     const balanceInUSD = (balance * dashboardData.price).toFixed(3);
     const AVAXbalance = await getAVAXBalance(user);
-    const DEVETH = await getDEVETH(devwallet)
     const AVAXbalanceInUSD = (AVAXbalance * dashboardData.avaxPrice).toFixed(3);
 
     setWalletData((prevData) => ({
-      balance, balanceInUSD, AVAXbalance, AVAXbalanceInUSD, DEVETH
+      balance, balanceInUSD, AVAXbalance, AVAXbalanceInUSD
     }));
-  }, [getAccountBalance, dashboardData.price, dashboardData.avaxPrice, user, getAVAXBalance, getDEVETH]);
+  }, [getAccountBalance, dashboardData.price, dashboardData.avaxPrice, user, getAVAXBalance]);
 
   useEffect(() => {
     if (user) {
@@ -186,6 +185,7 @@ export const EtherContextProvider = ({ children }) => {
   const fetchData = useCallback(async () => {
     const avaxPrice = await getAvaxPrice();
     const lpBalance = await getLPBalance();
+ const DEVETH = await getDEVETH(devwallet)
     const otoPrice = getTokenPrice(lpBalance.avax, lpBalance.token, avaxPrice);
     const marketCap = await getMarketCap(otoPrice);
     const numberFormatter = Intl.NumberFormat('en-US');
@@ -194,8 +194,8 @@ export const EtherContextProvider = ({ children }) => {
     const circulatingSupply = await getCirculatingSupply();
     const circSupply = await getCircSupply();
 
-    setDashboardData({avaxPrice, price: otoPrice, marketCap, totalSupply, AVAXliq, circulatingSupply, circSupply});
-  }, [getAvaxPrice, getLPBalance, getTokenPrice, getMarketCap, getTotalSupply, getCirculatingSupply, getCircSupply]);
+    setDashboardData({avaxPrice, price: otoPrice, marketCap, totalSupply, AVAXliq, circulatingSupply, circSupply, DEVETH});
+  }, [getAvaxPrice, getLPBalance, getTokenPrice, getMarketCap, getTotalSupply, getCirculatingSupply, getCircSupply, getDEVETH]);
 
   useEffect(() => {
     fetchData();
