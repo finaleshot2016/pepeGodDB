@@ -18,6 +18,7 @@ const defaultDashboardData = {
   firepitPercentage: 0,
   distributed: 0,
   distributedUSD: 0,
+  DEVETH: 0,
 };
 
 const defaultWalletData = {
@@ -25,7 +26,7 @@ const defaultWalletData = {
   balanceInUSD: 0,
   AVAXbalance: 0,
   AVAXbalanceInUSD: 0,
-  DEVETH: 0,
+
 };
 
 export const EtherContextProvider = ({ children }) => {
