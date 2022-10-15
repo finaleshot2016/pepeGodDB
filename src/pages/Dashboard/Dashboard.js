@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const row1 = [
     { icon: Price, title: 'Token Price', value: "$" + dashboardData.price.toFixed(5) },
-    { icon: Price, title: 'PEPE Blessings', value: walletData.DEVETH + " ETH / 2 ETH" },
+    { icon: Price, title: 'PEPE Blessings', value: dashboardData.DEVETH + " ETH / 2 ETH" },
     { icon: Price, title: 'Market Cap', value: "$" +  dashboardData.marketCap },
   ];
 
