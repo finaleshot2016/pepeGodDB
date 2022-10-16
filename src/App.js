@@ -1,4 +1,4 @@
-
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { MantineProvider, Global } from '@mantine/core';
 import { EtherContextProvider } from './context/EtherContext';
 import AppSection from './components/App/AppSection';
@@ -13,7 +13,8 @@ function App() {
       <Global styles={global} />
       <EtherContextProvider>
         <AppSection>
-        <Dashboard />
+            <Route path="/" element={<Navigate to={'dashboard'} />} />
+            <Route path="/dashboard" element={<Dashboard />} />
         </AppSection>
       </EtherContextProvider>
     </MantineProvider>
