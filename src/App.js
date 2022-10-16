@@ -14,7 +14,7 @@ function App() {
       <Global styles={global} />
       <EtherContextProvider>
         <AppSection>
-
+        <Dashboard />
         </AppSection>
       </EtherContextProvider>
     </MantineProvider>
