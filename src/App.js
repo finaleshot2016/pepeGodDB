@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import { MantineProvider, Global } from '@mantine/core';
 import { EtherContextProvider } from './context/EtherContext';
 import AppSection from './components/App/AppSection';
