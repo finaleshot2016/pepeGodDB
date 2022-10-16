@@ -15,7 +15,7 @@ function App() {
         <AppSection>
           <Routes>
             <Route path="/" element={<Navigate to={'dashboard'} />} />
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </AppSection>
       </EtherContextProvider>
