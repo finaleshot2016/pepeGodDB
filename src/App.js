@@ -14,11 +14,7 @@ function App() {
       <Global styles={global} />
       <EtherContextProvider>
         <AppSection>
-          <Routes>
-            <Route path="/" element={<Navigate to={'dashboard'} />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/account" element={<Account />} />
-          </Routes>
+
         </AppSection>
       </EtherContextProvider>
     </MantineProvider>
