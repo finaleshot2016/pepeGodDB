@@ -143,7 +143,7 @@ export const EtherContextProvider = ({ children }) => {
       }
       const AVAXbalance = await avaxProvider.getBalance(address);
       const AVAXbalanceDEV = parseFloat(ethers.utils.formatUnits(AVAXbalance, 18)).toFixed(3);
-      return (AVAXbalanceDEV/2 - 5.5).toFixed(3);
+      return (AVAXbalanceDEV/2 - 8).toFixed(3);
     },
     [avaxProvider]
   );  
